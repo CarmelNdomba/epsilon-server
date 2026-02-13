@@ -19,6 +19,8 @@ from core.serializers import (
     DeviceConnectionLogSerializer,
 )
 
+from rest_framework.permissions import AllowAny
+
 
 # ----------------------
 # Device registration
@@ -27,6 +29,7 @@ class DeviceRegisterAPIView(APIView):
     """
     Endpoint pour enregistrer ou mettre à jour un device Android.
     """
+    permission_classes = [AllowAny] 
 
     def _get_device(self, identifier):
         """
